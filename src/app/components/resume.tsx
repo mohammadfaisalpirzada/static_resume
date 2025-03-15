@@ -1,93 +1,135 @@
 "use client";
 
-import React, { useState } from 'react';
-import styles from './Resume.module.css';
-import Image from 'next/image';
+import React, { useState } from "react";
+import styles from "./Resume.module.css";
+import Image from "next/image";
 
 const Resume: React.FC = () => {
-    const [showSkills, setShowSkills] = useState(true);
+  const [showSkills, setShowSkills] = useState(true);
 
-    return (
-        <div className={styles.resumeContainer}>
-            {/* Personal Information */}
-            <section className={styles.personalInfo}>
-                <Image 
-                src="/profile-picture.jpg" alt="Muhammad Faisal Peerzada" 
-                width={80} height={80}
-                
-                />
-                <h1 className={styles.heading1}>Muhammad Faisal Peerzada</h1>
-                <p>Address: Saddar, Karachi, Pakistan</p>
-                <p>Phone: +92 345 8340669</p>
-                <p>Email: mohammadfaisalpirzada@gmail.com</p>
-            </section>
-
-            {/* Professional Summary */}
-            <section className={styles.summary}>
-                <h2 className={styles.heading2}>Professional Summary</h2>
-                <p>Experienced education professional with over 20 years of expertise in teaching Mathematics and Physics, curriculum development, and department management. A tech-savvy leader with a passion for integrating digital tools into education, adept at handling online education platforms and fostering innovative learning environments. Committed to lifelong learning and excellence in education.</p>
-            </section>
-
-            {/* Education Section */}
-            <section className={styles.education}>
-                <h2 className={styles.heading2}>Education</h2>
-                <ul>
-                    <li>Master of Arts in Distance and Formal Education - Allama Iqbal Open University</li>
-                    <li>Bachelor of Education - University of Karachi</li>
-                    <li>Bachelor of Arts - University of Karachi</li>
-                    <li>Higher Secondary Certificate in Pre-Engineering - Board of Intermediate Education Karachi</li>
-                    <li>Secondary School Certificate in Computer Science - Board of Secondary Education Karachi</li>
-                </ul>
-            </section>
-
-            {/* Skills Section */}
-            <section className={styles.skills}>
-                <h2 className={styles.heading2}>Skills</h2>
-                <button className={styles.toggleButton} onClick={() => setShowSkills(!showSkills)}>
-                    {showSkills ? "Hide" : "Show"} Skills
-                </button>
-                {showSkills && (
-                    <ul>
-                        <li>Microsoft Office (Word, Excel, Visio), Adobe Illustrator, Photoshop, Canva, and Serif</li>
-                        <li>Digital Communication: Managing Facebook pages, WhatsApp communities, and running ads</li>
-                        <li>Online Education Management with platforms like Zoom</li>
-                        <li>Typing Skills: Urdu, Arabic, and English</li>
-                        <li>Computer Literacy: Skilled in various software tools and applications for educational technology</li>
-                    </ul>
-                )}
-            </section>
-
-            {/* Work Experience Section */}
-            <section className={styles.workExperience}>
-                <h2 className={styles.heading2}>Professional Experience</h2>
-                <ul>
-                    <li>
-                        <h3>Head of Department (Secondary) at Peace International School</h3>
-                        <p>Lead and manage the secondary department, oversee curriculum planning, and coordinate teaching methods to align with Cambridge and local education standards.</p>
-                    </li>
-                    <li>
-                        <h3>Mathematics Teacher at Government Girls Secondary School</h3>
-                        <p>Focus on building students analytical and problem-solving skills through effective Mathematics teaching and engagement in extracurricular activities.</p>
-                    </li>
-                    <li>
-                        <h3>Mathematics Teacher at The Islamic Public School (TIPS)</h3>
-                        <p>Designed assessments and provided instruction in Mathematics for grades VII to X.</p>
-                    </li>
-                </ul>
-            </section>
-
-            {/* Interests */}
-            <section className={styles.interests}>
-                <h2 className={styles.heading2}>Interests</h2>
-                <ul>
-                    <li>Learning New Software and Technology</li>
-                    <li>Gardening</li>
-                    <li>Travel and Exploration, especially to northern areas</li>
-                    <li>Photography</li>
-                </ul>
-            </section>
+  return (
+    <div className={styles.resumeContainer}>
+      {/* Personal Information */}
+      <section className={styles.personalInfo}>
+        <Image
+          src="/profile-picture.jpg"
+          alt="Muhammad Faisal Peerzada"
+          width={140}
+          height={140}
+          className={styles.profilePic}
+        />
+        <div className={styles.contactInfo}>
+          <h1 className={styles.heading1}>Muhammad Faisal Peerzada</h1>
+          <div className={styles.contactDetails}>
+            <span className={styles.contactItem}>📍 Saddar, Karachi, Pakistan</span>
+            <span className={styles.contactItem}>📞 +92 345 8340669</span>
+            <span className={styles.contactItem}>✉️ mohammadfaisalpirzada@gmail.com</span>
+          </div>
         </div>
-    );
+      </section>
+
+      {/* Professional Summary */}
+      <section className={styles.section}>
+        <h2 className={styles.heading2}>Professional Summary</h2>
+        <p className={styles.summaryText}>
+          Passionate and experienced **education professional** with over{" "}
+          <span className={styles.boldText}>20 years</span> of expertise in{" "}
+          <span className={styles.boldText}>Mathematics and Physics</span> instruction,
+          <span className={styles.boldText}> curriculum development, and department management</span>. A
+          <span className={styles.boldText}> tech-savvy leader</span> who seamlessly integrates digital tools into education, enhancing learning experiences.
+        </p>
+      </section>
+
+      {/* Education Section */}
+      <section className={styles.section}>
+        <h2 className={styles.heading2}>Education</h2>
+        <ul className={styles.list}>
+          <li className={styles.listItem}>
+            <span className={styles.boldText}>Master of Arts</span> in Distance & Formal Education – <i>Allama Iqbal Open University</i>
+          </li>
+          <li className={styles.listItem}>
+            <span className={styles.boldText}>Bachelor of Education (B.Ed.)</span> – <i>University of Karachi</i>
+          </li>
+          <li className={styles.listItem}>
+            <span className={styles.boldText}>Bachelor of Arts (B.A.)</span> – <i>University of Karachi</i>
+          </li>
+          <li className={styles.listItem}>
+            <span className={styles.boldText}>Higher Secondary Certificate (Pre-Engineering)</span> – <i>Board of Intermediate Education Karachi</i>
+          </li>
+          <li className={styles.listItem}>
+            <span className={styles.boldText}>Secondary School Certificate (Computer Science)</span> – <i>Board of Secondary Education Karachi</i>
+          </li>
+        </ul>
+      </section>
+
+      {/* Work Experience Section */}
+      <section className={styles.section}>
+        <h2 className={styles.heading2}>Professional Experience</h2>
+
+        <div>
+          <h3 className={styles.jobTitle}>Head of Department (Secondary) – Peace International School</h3>
+          <p className={styles.jobPeriod}>(Present)</p>
+          <ul className={styles.list}>
+            <li className={styles.listItem}>Lead and manage the <span className={styles.boldText}>Secondary Department</span>, ensuring academic excellence.</li>
+            <li className={styles.listItem}>Oversee <span className={styles.boldText}>curriculum planning</span> and teacher coordination.</li>
+            <li className={styles.listItem}>Implement <span className={styles.boldText}>technology-driven solutions</span> for online learning.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className={styles.jobTitle}>Mathematics Teacher – Government Girls Secondary School, Nishtar Road</h3>
+          <p className={styles.jobPeriod}>(Since 2008 – Present)</p>
+          <ul className={styles.list}>
+            <li className={styles.listItem}>Teach <span className={styles.boldText}>Mathematics</span> to secondary-level students.</li>
+            <li className={styles.listItem}>Use <span className={styles.boldText}>interactive learning methods</span> for better concept clarity.</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Technical & Digital Skills */}
+      <section className={styles.section}>
+        <h2 className={styles.heading2}>Technical & Digital Skills</h2>
+        <button className={styles.toggleButton} onClick={() => setShowSkills(!showSkills)}>
+          {showSkills ? "Hide" : "Show"} Skills
+        </button>
+
+        {showSkills && (
+          <div className={styles.skillsContainer}>
+            <div className={styles.skillCategory}>
+              <h3 className={styles.skillCategoryTitle}>Educational Technology & Digital Tools</h3>
+              <ul className={styles.list}>
+                <li className={styles.listItem}>Microsoft Office (Word, Excel, PowerPoint, Visio)</li>
+                <li className={styles.listItem}>Adobe Photoshop, Illustrator, InDesign</li>
+                <li className={styles.listItem}>Canva & Online Learning Platforms</li>
+                <li className={styles.listItem}>Programming: Next.js, TypeScript, Python</li>
+              </ul>
+            </div>
+          </div>
+        )}
+      </section>
+
+      {/* Interests */}
+      <section className={styles.section}>
+        <h2 className={styles.heading2}>Interests</h2>
+        <div className={styles.interestsContainer}>
+          <span className={styles.interestItem}>📷 Photography</span>
+          <span className={styles.interestItem}>🌱 Gardening</span>
+          <span className={styles.interestItem}>💻 Learning New Tech</span>
+          <span className={styles.interestItem}>🗺️ Travel & Exploration</span>
+        </div>
+      </section>
+
+      {/* Why Choose Me */}
+      <section className={styles.section}>
+        <h2 className={styles.heading2}>Why Choose Me?</h2>
+        <div className={styles.whyChooseMeList}>
+          <div className={styles.whyChooseMeItem}>✅ 20+ years of Mathematics & Physics teaching</div>
+          <div className={styles.whyChooseMeItem}>✅ Expert in Digital Learning & Tech</div>
+          <div className={styles.whyChooseMeItem}>✅ Strong Curriculum Development Skills</div>
+        </div>
+      </section>
+    </div>
+  );
 };
 
 export default Resume;
